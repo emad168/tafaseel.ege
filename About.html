@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TAFASEEL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                        url('1000316484.jpg'); 
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(166, 139, 90, 0.2);
+        }
+
+        .logo h2 { font-size: 26px; margin: 0; color: #a68b5a; letter-spacing: 3px; font-weight: 700; }
+
+        ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; direction: ltr; }
+        ul li a { color: rgba(255,255,255,0.8); text-decoration: none; transition: 0.3s; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        ul li a:hover, .active { color: #a68b5a; border-bottom: 1px solid #a68b5a; padding-bottom: 5px; }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 20px;
+            animation: zoomIn 1.2s ease;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .header-section h1 {
+            font-size: 4rem;
+            color: #a68b5a;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+        }
+
+        .header-divider {
+            width: 80px;
+            height: 3px;
+            background: #a68b5a;
+            margin: 0 auto 20px;
+        }
+
+        .header-section p { font-size: 1.4rem; color: #ddd; font-weight: 300; font-style: italic; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 4px; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: 0.4s ease;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            background: rgba(166, 139, 90, 0.05);
+            border-color: #a68b5a;
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: #a68b5a;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-card p {
+            line-height: 1.9;
+            color: #ccc;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .quote-section {
+            text-align: center;
+            margin-top: 100px;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .quote-section h2 {
+            font-size: 1.8rem;
+            color: #a68b5a;
+            font-weight: 400;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 100px;
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .header-section h1 { font-size: 2.5rem; }
+            .main-container { margin-top: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><h2>TAFASEEL</h2></div>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="#" class="active">About</a></li>
+            <li><a href="Big.html">Blog</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <header class="header-section">
+            <h1>OUR STORY</h1>
+            <div class="header-divider"></div>
+            <p>عندما تلتقي الخبرة بالتصميم الرفيع</p>
+        </header>
+
+        <div class="info-grid">
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+                <h3>THE DESIGNER</h3>
+                <p>
+                    أنا عماد حمدي، مصمم متخصص وشغوف بكل ما هو استثنائي في عالم الديكور. أكرس خبرتي لابتكار قطع فنية فريدة تحول المساحات العادية إلى أماكن تنبض بالحياة والأناقة، معتمداً على رؤية فنية تدمج بين الأصالة والحداثة.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon"><i class="fas fa-gem"></i></div>
+                <h3>OUR QUALITY</h3>
+                <p>
+                    في "تفاصيل"، الجودة هي حجر الزاوية لكل ما نقوم به. نحن نضمن تنفيذ كل قطعة يدوية بأعلى معايير الدقة والاحترافية، لنقدم لكم منتجات فاخرة تعكس الذوق الرفيع وتضفي لمسة ملكية على منازلكم.
+                </p>
+            </div>
+        </div>
+
+        <section class="quote-section">
+            <h2>"نصنع التفاصيل.. لتصنع لك الفرق"</h2>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 TAFASEEL | CRAFTED BY EMAD HAMDY</p>
+    </footer>
+
+</body>
+</html>

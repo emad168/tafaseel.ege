@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAFASEEL | Luxury Handcrafted Decor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #a68b5a;
+            --dark-overlay: rgba(0, 0, 0, 0.7);
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        @keyframes heroReveal {
+            from { clip-path: inset(0 50% 0 50%); opacity: 0; }
+            to { clip-path: inset(0 0 0 0); opacity: 1; }
+        }
+
+        @keyframes textSlideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            /* إضافة الخلفية للصفحة بالكامل */
+            background: linear-gradient(var(--dark-overlay), var(--dark-overlay)), 
+                        url('WhatsApp Image 2026-01-24 at 4.47.21 PM.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* شريط التنقل الملكي */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo h2 {
+            font-size: 28px;
+            color: var(--gold);
+            letter-spacing: 5px;
+            font-weight: 800;
+            text-shadow: 0 0 15px rgba(166, 139, 90, 0.3);
+        }
+
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s;
+            opacity: 0.7;
+        }
+
+        nav ul li a:hover, .active { opacity: 1; color: var(--gold); }
+
+        /* القسم الرئيسي */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            animation: heroReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .hero-tagline {
+            font-size: 14px;
+            letter-spacing: 8px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: textSlideUp 1s ease 0.5s both;
+        }
+
+        .hero-section h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            animation: textSlideUp 1s ease 0.7s both;
+        }
+
+        /* زر الأكشن */
+        .cta-btn {
+            padding: 18px 45px;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            animation: textSlideUp 1s ease 0.9s both;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--gold);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .cta-btn:hover::before { left: 0; }
+        .cta-btn:hover { color: black; box-shadow: 0 0 30px rgba(166, 139, 90, 0.4); }
+
+        /* قسم المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 100px 8%;
+            /* جعل الشبكة شفافة لتظهر الخلفية من ورائها */
+            background: transparent;
+        }
+
+        .feature-item {
+            background: var(--glass);
+            backdrop-filter: blur(5px);
+            padding: 60px 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .feature-item:hover {
+            background: rgba(166, 139, 90, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .feature-item i {
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 60px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .social-icons { margin-bottom: 30px; display: flex; justify-content: center; gap: 30px; }
+        .social-icons a { color: white; font-size: 20px; transition: 0.3s; opacity: 0.6; }
+        .social-icons a:hover { opacity: 1; color: var(--gold); }
+
+        .copy { font-size: 11px; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero-section h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><h2>TAFASEEL</h2></div>
+        <ul>
+            <li><a href="Home.html" class="active">Home</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Big.html">Blog</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section">
+        <p class="hero-tagline">Exclusively Handcrafted</p>
+        <h1>DESIGNING<br>THE EXTRAORDINARY</h1>
+        <a href="Shop.html" class="cta-btn">EXPLORE DESINGES</a>
+    </section>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <i class="fas fa-fingerprint"></i>
+            <h3>UNIQUE DESIGN</h3>
+            <p>كل قطعة ننتجها تحمل بصمة خاصة، ندمج فيها الأصالة بالحداثة لتعبر عن ذوقك الرفيع.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-crown"></i>
+            <h3>ROYAL QUALITY</h3>
+            <p>نستخدم أرقى الخامات اليدوية لضمان جودة تدوم طويلاً، لأنك تستحق الأفضل دائماً.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>PREMIUM CARE</h3>
+            <p>خدمة استشارية وتوصيل يضمن وصول تحفتك الفنية بأمان تام إلى باب منزلك.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/tafaseel.6862792?igsh=MWdyamZjdmViazZvcA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1Fq7W9HJzy/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/201279150169" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copy">© 2026 TAFASEEL | Crafted by Emad Hamdy</p>
+    </footer>
+
+</body>
+</html>
